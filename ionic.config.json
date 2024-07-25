@@ -1,0 +1,7 @@
+{
+  "name": "kot-academy-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
