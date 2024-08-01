@@ -1,0 +1,39 @@
+.centrar-vertical {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100%; /* Ocupa el 100% de la altura del padre */
+  background-color: #f9f9f9;
+
+}
+.login-container {
+  border-top: 0.25rem solid #34a6d3;
+  border-bottom: 0.25rem solid #34a6d3;
+  border-radius: 20px;
+  box-shadow: 0 1px 2px #21212124;
+  background-color: #fff;
+}
+a {
+  color: #014583;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-2 {
+  gap: 0.5rem; /* Ajusta según sea necesario */
+}
+.whatsapp-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  img {
+    width: 100%;
+  }
+}
+.title {
+  color: #014583;
+}

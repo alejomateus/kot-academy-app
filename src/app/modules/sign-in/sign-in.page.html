@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true">
+	<div class="centrar-vertical">
+		<ion-grid>
+			<ion-row>
+				<ion-col size="12" size-sm="1" size-md="3" size-lg="4"></ion-col>
+				<ion-col size="12" size-sm="10" size-md="6" size-lg="4" class="ion-text-center">
+					<img src="assets/logo_kot.JPG" alt="" class="ion-padding" />
+					<div class="login-container">
+						<p class="fs-3 fw-bold title ion-padding">Bienvenido a KOT Academy</p>
+						<form class="ion-text-left ion-padding">
+							<div class="ion-padding-bottom">
+								<label for="email" class="form-label">Correo electronico</label>
+								<input type="email" class="form-control" id="email" aria-describedby="emailError" />
+								<div id="emailError" class="form-text">We'll never share your email with anyone else.</div>
+							</div>
+							<div class="ion-padding-bottom">
+								<label for="password" class="form-label">Contraseña</label>
+								<input type="password" class="form-control" id="password" />
+							</div>
+
+							<div class="ion-text-end ion-padding-bottom">
+								<a href="#" class="btn btn-link text-decoration-underline fw-bold">¿Olvidaste tu contraseña?</a>
+							</div>
+							<div class="d-grid gap-2">
+								<button class="btn btn-primary" type="button" [disabled]="true">Ingresar ahora</button>
+							</div>
+							<div class="ion-text-center ion-padding">
+								<a href="#" class="btn btn-link text-decoration-underline fw-bold"
+									>¿Quieres formar parte de nosotros?</a
+								>
+							</div>
+						</form>
+					</div>
+				</ion-col>
+				<ion-col size="12" size-sm="1" size-md="3" size-lg="4"></ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+</ion-content>
