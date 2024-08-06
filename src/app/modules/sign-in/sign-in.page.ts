@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { CommonsService } from '../shared/services/commons.service';
+import { SignInValidationMessages } from './models/sign-in';
 @Component({
 	selector: 'kot-sign-in',
 	templateUrl: './sign-in.page.html',
 	styleUrls: ['./sign-in.page.scss']
 })
-export class SignInPage {
+export class SignInPage implements OnInit {
 	signInForm: FormGroup;
-	signInValidationMessages: any;
-	constructor() {}
+	signInValidationMessages: SignInValidationMessages;
+	constructor(private commonsService: CommonsService) {}
+
+	ngOnInit(): void {
+		this.initForm();
+	}
 
 	initForm(): void {
 		this.signInValidationMessages = {
@@ -29,8 +34,14 @@ export class SignInPage {
 			]),
 			password: new FormControl('', [
 				Validators.required,
-				Validators.pattern('^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,50}$')
+				Validators.pattern(
+					'^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+={};:\'\\"|,.<>?/~`])[\\w!@#$%^&*()_+={};:\'\\"|,.<>?/~`]{8,50}$'
+				)
 			])
 		});
+	}
+
+	signUpNavigation(): void {
+		this.commonsService.navigate('sign-up');
 	}
 }

@@ -7,25 +7,44 @@
 					<img src="assets/logo_kot.JPG" alt="" class="ion-padding" />
 					<div class="login-container">
 						<p class="fs-3 fw-bold title ion-padding">Bienvenido a KOT Academy</p>
-						<form class="ion-text-left ion-padding">
+						<form class="ion-text-left ion-padding" novalidate [formGroup]="signInForm">
 							<div class="ion-padding-bottom">
 								<label for="email" class="form-label">Correo electronico</label>
-								<input type="email" class="form-control" id="email" aria-describedby="emailError" />
-								<div id="emailError" class="form-text">We'll never share your email with anyone else.</div>
+								<input
+									type="email"
+									class="form-control"
+									id="email"
+									formControlName="email"
+									[class.error]="signInForm.controls['email'].invalid && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched)"
+								/>
+								<div id="emailError" class="form-text"></div>
 							</div>
 							<div class="ion-padding-bottom">
 								<label for="password" class="form-label">Contraseña</label>
-								<input type="password" class="form-control" id="password" />
+								<input
+									type="password"
+									class="form-control"
+									id="password"
+									formControlName="password"
+									[class.error]="signInForm.controls['password'].invalid && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched)"
+								/>
+								<div class="error-formulario">
+									<!-- <ng-container *ngFor="let validation of signInValidationMessages.email">
+                      <span class="error-message"
+                          *ngIf="formCotizar.controls.origen.hasError(validation.type) && (formCotizar.controls.origen.dirty || formCotizar.controls.origen.touched)">
+                          {{ validation.message }}
+                      </span>
+                  </ng-container> -->
+								</div>
 							</div>
-
 							<div class="ion-text-end ion-padding-bottom">
-								<a href="#" class="btn btn-link text-decoration-underline fw-bold">¿Olvidaste tu contraseña?</a>
+								<a class="btn btn-link text-decoration-underline fw-bold">¿Olvidaste tu contraseña?</a>
 							</div>
 							<div class="d-grid gap-2">
-								<button class="btn btn-primary" type="button" [disabled]="true">Ingresar ahora</button>
+								<button class="btn btn-primary" type="button" [disabled]="signInForm.invalid">Ingresar ahora</button>
 							</div>
 							<div class="ion-text-center ion-padding">
-								<a href="#" class="btn btn-link text-decoration-underline fw-bold"
+								<a class="btn btn-link text-decoration-underline fw-bold" (click)="signUpNavigation()"
 									>¿Quieres formar parte de nosotros?</a
 								>
 							</div>

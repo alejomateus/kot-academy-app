@@ -1,13 +1,70 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>sign-up</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">sign-up</ion-title>
-    </ion-toolbar>
-  </ion-header>
+	<div class="centrar-vertical">
+		<ion-grid>
+			<ion-row>
+				<ion-col size="12" size-sm="1" size-md="3" size-lg="4"></ion-col>
+				<ion-col size="12" size-sm="10" size-md="6" size-lg="4" class="ion-text-center">
+					<img src="assets/logo_kot.JPG" alt="" class="ion-padding" />
+					<div class="login-container">
+						<p class="fs-4 m-0 fw-bold title ion-padding">
+							¡Estamos alegres de conocerte! Déjanos unos datos y hoy mismo te contactaremos.
+						</p>
+						<form class="ion-text-left ion-padding" novalidate [formGroup]="signUpForm">
+							<div class="ion-padding-bottom">
+								<label for="name" class="form-label">Nombre</label>
+								<input
+									type="name"
+									class="form-control"
+									id="name"
+									formControlName="name"
+									[class.error]="signUpForm.controls['name'].invalid && (signUpForm.controls['name'].dirty || signUpForm.controls['name'].touched)"
+								/>
+								<div id="emailError" class="form-text"></div>
+							</div>
+							<div class="ion-padding-bottom">
+								<label for="phone" class="form-label">Telefono</label>
+								<div></div>
+								<ngx-intl-tel-input
+									[cssClass]="'form-control'"
+									[enableAutoCountrySelect]="true"
+									[enablePlaceholder]="true"
+									[searchCountryFlag]="true"
+									[searchCountryField]="[
+                SearchCountryField.Iso2,
+                SearchCountryField.Name
+              ]"
+									[selectFirstCountry]="false"
+									[selectedCountryISO]="CountryISO.Colombia"
+									[phoneValidation]="true"
+									[separateDialCode]="true"
+									[numberFormat]="PhoneNumberFormat.National"
+									name="phone"
+									formControlName="phone"
+								>
+								</ngx-intl-tel-input>
+								<div class="error-formulario">
+									<!-- <ng-container *ngFor="let validation of signInValidationMessages.email">
+                      <span class="error-message"
+                          *ngIf="formCotizar.controls.origen.hasError(validation.type) && (formCotizar.controls.origen.dirty || formCotizar.controls.origen.touched)">
+                          {{ validation.message }}
+                      </span>
+                  </ng-container> -->
+								</div>
+							</div>
+
+							<div class="d-grid gap-2">
+								<button class="btn btn-success" type="button" [disabled]="signUpForm.invalid">Continuar</button>
+							</div>
+							<div class="ion-text-center ion-padding">
+								<a class="btn btn-link text-decoration-underline fw-bold" (click)="signInNavigation()"
+									>¿Ya tienes una cuenta?</a
+								>
+							</div>
+						</form>
+					</div>
+				</ion-col>
+				<ion-col size="12" size-sm="1" size-md="3" size-lg="4"></ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
 </ion-content>
