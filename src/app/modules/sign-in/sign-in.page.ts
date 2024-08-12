@@ -44,4 +44,8 @@ export class SignInPage implements OnInit {
 	signUpNavigation(): void {
 		this.commonsService.navigate('sign-up');
 	}
+
+	signIn() {
+		this.commonsService.navigate('user/home');
+	}
 }

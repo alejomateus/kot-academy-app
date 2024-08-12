@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { SharedModule } from '@shared/shared.module';
 import { ThemeModule } from '@theme/theme.module';
-import { SignUpPageRoutingModule } from './sign-up-routing.module';
-import { SignUpPage } from './sign-up.page';
+import { HomePageRoutingModule } from './home-routing.module';
+import { HomePage } from './home.page';
 
 @NgModule({
-	imports: [CommonModule, FormsModule, IonicModule, SignUpPageRoutingModule, ThemeModule, SharedModule],
-	declarations: [SignUpPage]
+	imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule, ThemeModule, SharedModule],
+	declarations: [HomePage]
 })
-export class SignUpPageModule {}
+export class HomePageModule {}

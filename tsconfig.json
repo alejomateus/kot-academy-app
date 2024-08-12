@@ -27,7 +27,10 @@
 			"@app/*": ["app/*"],
 			"@sign-in/*": ["app/modules/sign-in/*"],
 			"@sign-up/*": ["app/modules/sign-up/*"],
-			"@shared/*": ["app/modules/shared/*"]
+			"@shared/*": ["app/modules/shared/*"],
+			"@theme/*": ["app/modules/theme/*"],
+      "@user/*": ["app/modules/user/*"],
+      "@models/*": ["app/models/*"]
 		}
 	},
 	"angularCompilerOptions": {

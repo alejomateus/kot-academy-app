@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'sign-up',
+		redirectTo: 'user',
 		pathMatch: 'full'
 	},
 	{
@@ -13,7 +13,11 @@ const routes: Routes = [
 	},
 	{
 		path: 'sign-up',
-		loadChildren: () => import('./modules/sign-up/sign-up.module').then((m) => m.SignUpPageModule)
+		loadChildren: () => import('@sign-up/sign-up.module').then((m) => m.SignUpPageModule)
+	},
+	{
+		path: 'user',
+		loadChildren: () => import('@user/user.module').then((m) => m.UserModule)
 	}
 ];
 
