@@ -7,7 +7,7 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 
 const COMPONENTS = [ScheduleComponent];
-const MODULES = [NgxIntlTelInputModule, FormsModule, ReactiveFormsModule, IonicModule, NgbCarouselModule];
+const MODULES = [NgxIntlTelInputModule, FormsModule, ReactiveFormsModule, IonicModule, NgbCarouselModule, IonicModule];
 @NgModule({
 	declarations: [...COMPONENTS],
 	imports: [CommonModule, ...MODULES],

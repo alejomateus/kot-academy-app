@@ -37,3 +37,23 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
 @import 'intl-tel-input/build/css/intlTelInput.css';
+
+.centrar-vertical {
+	display: flex;
+	justify-content: center; /* Centra horizontalmente */
+	align-items: center; /* Centra verticalmente */
+	height: 100%; /* Ocupa el 100% de la altura del padre */
+}
+
+@media (max-width: 576px) {
+	.centrar-vertical {
+		background-image: var(--opacity-black), url(/assets/fondo.jpeg);
+		background-repeat: round;
+	}
+}
+@media (min-width: 576px) {
+	.centrar-vertical {
+		background-image: var(--opacity-black), url(/assets/fondo2.jpeg);
+		background-repeat: round;
+	}
+}
