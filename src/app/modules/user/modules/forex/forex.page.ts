@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { DashboardOptions } from '@user/models/dashboard-options';
+import { DashboardOptions } from '@models/dashboard-options';
 
 @Component({
-  selector: 'kot-forex',
-  templateUrl: './forex.page.html',
-  styleUrls: ['./forex.page.scss'],
+	selector: 'kot-forex',
+	templateUrl: './forex.page.html',
+	styleUrls: ['./forex.page.scss']
 })
 export class ForexPage implements OnInit {
 	dashboardOptions: DashboardOptions[] = [
@@ -30,16 +30,14 @@ export class ForexPage implements OnInit {
 			redirect: 'trade-ideas'
 		},
 		{
-			image: 'binaries-options.jpeg',
+			image: 'schedule2.jpeg',
 			title: 'Horario',
 			description: 'Verifica el horario e ingresa siempre a clases',
 			color: 'dark',
-			redirect: 'class-shedule'
+			redirect: 'class-schedule'
 		}
 	];
-  constructor() { }
+	constructor() {}
 
-  ngOnInit() {
-  }
-
+	ngOnInit() {}
 }

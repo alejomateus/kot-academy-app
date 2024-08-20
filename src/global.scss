@@ -43,6 +43,7 @@
 	justify-content: center; /* Centra horizontalmente */
 	align-items: center; /* Centra verticalmente */
 	height: 100%; /* Ocupa el 100% de la altura del padre */
+	color: var(--color-dark);
 }
 
 @media (max-width: 576px) {
@@ -56,4 +57,12 @@
 		background-image: var(--opacity-black), url(/assets/fondo2.jpeg);
 		background-repeat: round;
 	}
+}
+body {
+	height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+	margin: 0; /* Elimina el margen por defecto del body */
+}
+ion-content {
+	height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+	margin: 0; /* Elimina el margen por defecto del body */
 }

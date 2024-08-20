@@ -1,0 +1,13 @@
+@media (max-width: 576px) {
+	.centrar-vertical {
+		background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+			url(/assets/services/binaries.jpeg);
+		display: inline-table;
+	}
+}
+@media (min-width: 576px) {
+	.centrar-vertical {
+		background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+			url(/assets/services/binaries.jpeg);
+	}
+}

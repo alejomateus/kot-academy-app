@@ -22,6 +22,5 @@ export class ScheduleComponent implements OnInit {
 				this.max = new Array(max);
 			}
 		});
-		console.log(this.max.length);
 	}
 }

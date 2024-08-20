@@ -1,7 +1,8 @@
 export interface DashboardOptions {
-	image: string;
+	image?: string;
+  url?: string;
 	title: string;
 	description: string;
 	color: string;
-	redirect: string;
+	redirect?: string;
 }

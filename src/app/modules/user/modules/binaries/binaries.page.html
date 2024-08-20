@@ -1,13 +1,9 @@
 <ion-content [fullscreen]="true">
-	<ion-grid>
-		<ion-row>
-			<ion-col></ion-col>
-			<ion-col size="12" size-md="11">
-				<ion-grid>
-					<kot-dashboard-options [dashboardOptions]="dashboardOptions"></kot-dashboard-options>
-				</ion-grid>
-			</ion-col>
-			<ion-col></ion-col>
-		</ion-row>
-	</ion-grid>
+	<div class="centrar-vertical">
+		<kot-dashboard-options
+			(containerClick)="navigate($event)"
+			[dashboardOptions]="dashboardOptions"
+			title="Binarias"
+		></kot-dashboard-options>
+	</div>
 </ion-content>
