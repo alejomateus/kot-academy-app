@@ -1,17 +1,33 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
+import { RouterModule, Routes } from '@angular/router';
 import { ForexPage } from './forex.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: ForexPage
-  }
+	{
+		path: '',
+		component: ForexPage
+	},
+	{
+		path: 'class-schedule',
+		loadChildren: () => import('./modules/class-schedule/class-schedule.module').then((m) => m.ClassSchedulePageModule)
+	},
+	{
+		path: 'course-syllabus',
+		loadChildren: () =>
+			import('./modules/course-syllabus/course-syllabus.module').then((m) => m.CourseSyllabusPageModule)
+	},
+	{
+		path: 'live-lesson',
+		loadChildren: () => import('./modules/live-lesson/live-lesson.module').then((m) => m.LiveLessonPageModule)
+	},
+	{
+		path: 'trade-ideas',
+		loadChildren: () => import('./modules/trade-ideas/trade-ideas.module').then((m) => m.TradeIdeasPageModule)
+	}
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
 export class ForexPageRoutingModule {}

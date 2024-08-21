@@ -16,6 +16,14 @@ const routes: Routes = [
 		path: 'course-syllabus',
 		loadChildren: () =>
 			import('./modules/course-syllabus/course-syllabus.module').then((m) => m.CourseSyllabusPageModule)
+	},
+	{
+		path: 'live-lesson',
+		loadChildren: () => import('./modules/live-lesson/live-lesson.module').then((m) => m.LiveLessonPageModule)
+	},
+	{
+		path: 'trade-ideas',
+		loadChildren: () => import('./modules/trade-ideas/trade-ideas.module').then((m) => m.TradeIdeasPageModule)
 	}
 ];
 

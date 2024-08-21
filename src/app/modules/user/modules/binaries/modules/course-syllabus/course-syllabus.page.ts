@@ -3,9 +3,9 @@ import { DashboardOptions } from '@models/dashboard-options';
 import { CommonsService } from '@shared/services/commons.service';
 
 @Component({
-  selector: 'kot-course-syllabus',
-  templateUrl: './course-syllabus.page.html',
-  styleUrls: ['./course-syllabus.page.scss'],
+	selector: 'kot-course-syllabus',
+	templateUrl: './course-syllabus.page.html',
+	styleUrls: ['./course-syllabus.page.scss']
 })
 export class CourseSyllabusPage implements OnInit {
 	options: DashboardOptions[] = [
@@ -16,8 +16,8 @@ export class CourseSyllabusPage implements OnInit {
 			redirect: '1'
 		},
 		{
-			title: 'Uso de trading view',
-			description: 'Uso de trading view',
+			title: 'Conceptos en vivo',
+			description: 'Conceptos en vivo',
 			color: 'danger',
 			redirect: '2'
 		},
@@ -36,11 +36,10 @@ export class CourseSyllabusPage implements OnInit {
 	];
 	constructor(private commonsService: CommonsService) {}
 
-  ngOnInit() {
-  }
+	ngOnInit() {}
 
-  navigate(route: string) {
-    console.log(route);
+	navigate(route: string) {
+		console.log(route);
 
 		this.commonsService.navigate('user/binaries/course-syllabus/' + route);
 	}

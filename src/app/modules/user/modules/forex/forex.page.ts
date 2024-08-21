@@ -9,28 +9,28 @@ import { DashboardOptions } from '@models/dashboard-options';
 export class ForexPage implements OnInit {
 	dashboardOptions: DashboardOptions[] = [
 		{
-			image: 'live-lessons.jpeg',
+			image: 'dashboard/live-lessons.jpeg',
 			title: 'Clases en vivo',
 			description: 'Ingresa ahora',
 			color: 'secondary',
 			redirect: 'live-lessons'
 		},
 		{
-			image: 'course-syllabus.jpeg',
+			image: 'dashboard/course-syllabus.jpeg',
 			title: 'Aprende ahora',
 			description: 'Aprende en todo momento con nuestro temario completo',
 			color: 'danger',
 			redirect: 'course-syllabus'
 		},
 		{
-			image: 'forex-options.jpeg',
+			image: 'dashboard/forex-options.jpeg',
 			title: 'Ideas de trade',
 			description: 'Revisa nuestra ideas de trade y opera con gestion',
 			color: 'medium',
 			redirect: 'trade-ideas'
 		},
 		{
-			image: 'schedule2.jpeg',
+			image: 'dashboard/schedule2.jpeg',
 			title: 'Horario',
 			description: 'Verifica el horario e ingresa siempre a clases',
 			color: 'dark',
