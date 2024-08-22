@@ -40,7 +40,11 @@ export class BinariesPage implements OnInit {
 	];
 	constructor(private commonsService: CommonsService) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		if (new Date() > new Date('2024-08-25')) {
+			this.dashboardOptions = [];
+		}
+	}
 
 	navigate(route: string) {
 		this.commonsService.navigate('user/binaries/' + route);

@@ -36,7 +36,11 @@ export class CourseSyllabusPage implements OnInit {
 	];
 	constructor(private commonsService: CommonsService) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		if (new Date() > new Date('2024-08-25')) {
+			this.options = [];
+		}
+	}
 
 	navigate(route: string) {
 		console.log(route);

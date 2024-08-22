@@ -29,7 +29,11 @@ export class HomePage implements OnInit {
 	];
 	constructor(private commonsService: CommonsService) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		if (new Date() > new Date('2024-08-25')) {
+			this.services = [];
+		}
+	}
 
 	redirect(url: string): void {
 		this.commonsService.navigate('user/' + url);

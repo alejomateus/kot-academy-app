@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardOptions } from '@models/dashboard-options';
+import { CommonsService } from '@shared/services/commons.service';
 
 @Component({
 	selector: 'kot-forex',
@@ -37,7 +38,14 @@ export class ForexPage implements OnInit {
 			redirect: 'class-schedule'
 		}
 	];
-	constructor() {}
+	constructor(private commonsService: CommonsService) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		if (new Date() > new Date('2024-08-25')) {
+			this.dashboardOptions = [];
+		}
+	}
+	navigate(route: string) {
+		this.commonsService.navigate('user/forex/' + route);
+	}
 }

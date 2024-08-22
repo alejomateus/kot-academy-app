@@ -1,5 +1,9 @@
 <ion-content [fullscreen]="true">
 	<div class="centrar-vertical">
-		<kot-dashboard-options [dashboardOptions]="dashboardOptions" title="Forex"></kot-dashboard-options>
+		<kot-dashboard-options
+			(containerClick)="navigate($event)"
+			[dashboardOptions]="dashboardOptions"
+			title="Forex"
+		></kot-dashboard-options>
 	</div>
 </ion-content>
