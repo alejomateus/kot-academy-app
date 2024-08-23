@@ -1,6 +1,13 @@
-<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+<nav
+	class="navbar navbar-expand-lg fixed-top"
+	[ngClass]="{
+		'bg-dark': validation,
+		'bg-body-tertiary': !validation
+	}"
+	[attr.data-bs-theme]="validation ? 'dark' : 'light'"
+>
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#">Navbar</a>
+		<a class="navbar-brand">KOT Academy</a>
 		<button
 			class="navbar-toggler"
 			type="button"
@@ -12,43 +19,130 @@
 		>
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="#">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Dropdown
-					</a>
-					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Action</a></li>
-						<li><a class="dropdown-item" href="#">Another action</a></li>
-						<li><hr class="dropdown-divider" /></li>
-						<li><a class="dropdown-item" href="#">Something else here</a></li>
+		@if (!validation) {
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link">Academias</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link">Quienes somos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link">Experiencia</a>
+					</li>
+				</ul>
+				<div class="navbar-text p-0">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link fw-bold" (click)="navigate('sign-in')">Iniciar sesión</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link fw-bold" (click)="navigate('sign-up')">Registro</a>
+						</li>
 					</ul>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled" aria-disabled="true">Disabled</a>
-				</li>
-			</ul>
-			<form class="d-flex" role="search">
-				<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-				<button class="btn btn-outline-success" type="submit">Search</button>
-			</form>
-		</div>
+				</div>
+			</div>
+		} @else {
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link">Servicios</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Binaries</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item">Clases en vivo</a></li>
+							<li><a class="dropdown-item">Aprende ahora</a></li>
+							<li><a class="dropdown-item">Ideas de trade</a></li>
+							<li><a class="dropdown-item">Horario</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Forex</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item">Clases en vivo</a></li>
+							<li><a class="dropdown-item">Aprende ahora</a></li>
+							<li><a class="dropdown-item">Ideas de trade</a></li>
+							<li><a class="dropdown-item">Horario</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="navbar-text p-0">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link fw-bold" (click)="navigate('home')">Cerrar sesión</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		}
 	</div>
 </nav>
+
 <ion-app>
 	<ion-router-outlet></ion-router-outlet>
 </ion-app>
-<!-- <a
-	class="whatsapp-link"
-	href="https://api.whatsapp.com/send?phone=573143720783&text=Hola, quiero mas información"
-	target="_blank"
+@if (!validation) {
+	<a
+		class="whatsapp-link"
+		href="https://api.whatsapp.com/send?phone=3194186947&text=Hola, quiero mas información"
+		target="_blank"
+	>
+		<img class="whatsapp shadow" src="assets/whatsapp.svg" alt="whatsapp icon" />
+	</a>
+}
+<footer
+	class="fixed-bottom p-1"
+	[ngClass]="{
+		'bg-dark': validation,
+		'bg-body-tertiary': !validation
+	}"
+	[attr.data-bs-theme]="validation ? 'dark' : 'light'"
 >
-	<img class="whatsapp" src="assets/whatsapp.svg" alt="whatsapp icon" />
-</a> -->
+	<div class="container">
+		<ion-row>
+			<ion-col size="12" class="ion-text-center pt-2">
+				<p class="text-muted mb-0">© 2024 KOT Academy - Todos los derechos reservados.</p>
+			</ion-col>
+			<ion-col size="12" class="ion-text-center">
+				<ul class="list-inline">
+					<li class="list-inline-item">
+						<a target="_blank"
+							><ion-icon
+								name="logo-facebook"
+								[ngClass]="{
+									'kot-color--dark': !validation,
+									'kot-color--white': validation
+								}"
+							></ion-icon
+						></a>
+					</li>
+					<li class="list-inline-item">
+						<a target="_blank"
+							><ion-icon
+								name="logo-instagram"
+								[ngClass]="{
+									'kot-color--dark': !validation,
+									'kot-color--white': validation
+								}"
+							></ion-icon
+						></a>
+					</li>
+					<li class="list-inline-item">
+						<a target="_blank"
+							><ion-icon
+								name="logo-tiktok"
+								[ngClass]="{
+									'kot-color--dark': !validation,
+									'kot-color--white': validation
+								}"
+							></ion-icon
+						></a>
+					</li>
+				</ul>
+			</ion-col>
+		</ion-row>
+	</div>
+</footer>

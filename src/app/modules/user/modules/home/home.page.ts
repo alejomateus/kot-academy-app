@@ -30,6 +30,7 @@ export class HomePage implements OnInit {
 	constructor(private commonsService: CommonsService) {}
 
 	ngOnInit() {
+		sessionStorage.setItem('auth', '1');
 		if (new Date() > new Date('2024-08-25')) {
 			this.services = [];
 		}

@@ -26,9 +26,11 @@
 										></iframe>
 									</div>
 								}
-								<ion-card-header class="ion-text-center">
-									<ion-card-title>{{ option.title }}</ion-card-title>
-								</ion-card-header>
+								@if (option.title) {
+									<ion-card-header class="ion-text-center">
+										<ion-card-title>{{ option.title }}</ion-card-title>
+									</ion-card-header>
+								}
 								@if (option.description) {
 									<ion-card-content class="ion-text-center"> {{ option.description }} </ion-card-content>
 								}

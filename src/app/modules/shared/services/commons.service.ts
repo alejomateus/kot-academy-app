@@ -24,4 +24,7 @@ export class CommonsService {
 		});
 		loading.present();
 	}
+	getAuthenticationValidation(): string {
+		return sessionStorage.getItem('auth');
+	}
 }

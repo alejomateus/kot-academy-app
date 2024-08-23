@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CommonsService } from '@shared/services/commons.service';
 import { CountryISO, PhoneNumberFormat, SearchCountryField } from 'ngx-intl-tel-input';
-import { CommonsService } from '../shared/services/commons.service';
 import { SignUpValidationMessages } from './models/sign-up';
 
 @Component({
@@ -20,6 +20,7 @@ export class SignUpPage implements OnInit {
 	constructor(private commonsService: CommonsService) {}
 
 	ngOnInit(): void {
+		sessionStorage.setItem('auth', '0');
 		this.initForm();
 	}
 

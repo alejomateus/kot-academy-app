@@ -10,26 +10,30 @@ import { CommonsService } from '@shared/services/commons.service';
 export class CourseSyllabusPage implements OnInit {
 	options: DashboardOptions[] = [
 		{
-			title: 'Basicos del trading',
-			description: 'Basicos del trading',
+			image: 'dashboard/binaries/basic.jpeg',
+			title: '',
+			description: '',
 			color: 'secondary',
 			redirect: '1'
 		},
 		{
-			title: 'Conceptos en vivo',
-			description: 'Conceptos en vivo',
+			image: 'dashboard/binaries/concepts.jpeg',
+			title: '',
+			description: '',
 			color: 'danger',
 			redirect: '2'
 		},
 		{
-			title: 'Patrones armonicos',
-			description: 'Patrones armonicos',
+			image: 'dashboard/binaries/patron.jpeg',
+			title: '',
+			description: '',
 			color: 'medium',
 			redirect: '3'
 		},
 		{
-			title: 'Lectura de mercado de alto nivel',
-			description: 'Lectura de mercado de alto nivel',
+			image: 'dashboard/binaries/lecture.jpeg',
+			title: '',
+			description: '',
 			color: 'dark',
 			redirect: '4'
 		}

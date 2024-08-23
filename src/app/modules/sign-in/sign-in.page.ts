@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CommonsService } from '../shared/services/commons.service';
+import { CommonsService } from '@shared/services/commons.service';
 import { SignInValidationMessages } from './models/sign-in';
 @Component({
 	selector: 'kot-sign-in',
@@ -14,6 +14,7 @@ export class SignInPage implements OnInit {
 
 	ngOnInit(): void {
 		this.initForm();
+		sessionStorage.setItem('auth', '0');
 	}
 
 	initForm(): void {
@@ -45,7 +46,7 @@ export class SignInPage implements OnInit {
 		this.commonsService.navigate('sign-up');
 	}
 
-	signIn() {
+	signIn(): void {
 		this.commonsService.navigate('user/home');
 	}
 }

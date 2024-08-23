@@ -5,8 +5,8 @@
 .login-container {
 	border-top: 0.25rem solid #34a6d3;
 	border-bottom: 0.25rem solid #34a6d3;
-	border-radius: 20px;
-	box-shadow: 0 1px 2px #21212124;
+	border-radius: 1.25rem;
+	box-shadow: 0 1px 2px #fff;
 	background-color: #fff;
 }
 a {
@@ -21,20 +21,25 @@ a {
 .gap-2 {
 	gap: 0.5rem; /* Ajusta según sea necesario */
 }
-.whatsapp-link {
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	width: 55px;
-	img {
-		width: 100%;
-	}
-}
+
 .title {
 	color: #014583;
 }
 .form-control {
 	&.error {
 		border-color: var(--color-error);
+	}
+}
+@media (max-width: 576px) {
+	.centrar-vertical {
+		display: inline-table;
+		padding-top: 4rem;
+		padding-bottom: 7rem;
+	}
+}
+@media (min-width: 576px) {
+	.centrar-vertical {
+		padding-top: 4rem;
+		padding-bottom: 7rem;
 	}
 }
