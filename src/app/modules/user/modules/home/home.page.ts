@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardOptions } from '@models/dashboard-options';
 import { CommonsService } from '@shared/services/commons.service';
-import { DashboardOptions } from '../../../../models/dashboard-options';
 
 @Component({
 	selector: 'kot-home',

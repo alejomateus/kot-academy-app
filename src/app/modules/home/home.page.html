@@ -1,13 +1,96 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
+	<div class="p-4"></div>
+	<section id="services" class="ion-padding-top">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-12 col-sm-10 col-md-10 col-lg-8 col-xl-8 p-0">
+				<div class="p-2">
+					<h1 class="text-center fw-bold">Servicios</h1>
+				</div>
+				<ngb-carousel [interval]="5000" [showNavigationIndicators]="false">
+					<ng-template ngbSlide *ngFor="let service of services" class="carousel-transformation">
+						<div class="picsum-img-wrapper">
+							<img [src]="'assets/services/'+service.image" class="transformation-image" alt="service" />
+						</div>
+						<div class="carousel-caption">
+							<h3>{{service.title}}</h3>
+							<span>{{service.description}}.</span>
+						</div>
+					</ng-template>
+				</ngb-carousel>
+			</div>
+			<div class="col"></div>
+		</div>
+	</section>
+	<section id="about-us" class="ion-text-center ion-padding-top">
+		<h2 class="d-sm-block">Conoce de quien aprenderás</h2>
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 py-2 image">
+				<img alt="asd" src="assets/about-us/instructor.png" class="w-100 shadow-dark instructor" />
+				<h5>Alejandro Yepes</h5>
+			</div>
+			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 py-2 description">
+				<span>
+					<br />🔷Trader Profesional <br />🔷CEO de KINGS OF TRADING <br />🔷El mejor Trader de binarias de 🇨🇴
+					<br />🔷Mentor personal “info”
+				</span>
+				<br /><br />
+				<!-- <ngb-carousel *ngIf="examples" [showNavigationIndicators]="false" [interval]="5000">
+					<ng-template ngbSlide *ngFor="let example of examples" class="carousel-example">
+						<div class="picsum-img-wrapper">
+							<img [src]="example" class="transformation-image" />
+						</div>
+					</ng-template>
+				</ngb-carousel> -->
+				<br />
+			</div>
+		</div>
+	</section>
+	<section class="ion-padding-bottom" id="team">
+		<div class="p-2">
+			<h1 class="text-center fw-bold">Nuestro equipo</h1>
+		</div>
+		<ion-row>
+			<ion-col size="12" size-sm="1.5" size-lg="1.5"></ion-col>
+			<ion-col size="12" size-sm="3" size-lg="3">
+				<ion-card color="light" class="m-0 shadow">
+					<img alt="ceo" class="w-100" src="assets/about-us/instructor.png" />
+					<ion-card-header class="ion-text-center">
+						<ion-card-title
+							>Alejandro Yepes
+							<br />
+							CEO
+						</ion-card-title>
+					</ion-card-header>
+				</ion-card>
+			</ion-col>
+			<ion-col size="12" size-sm="3" size-lg="3">
+				<ion-card color="light" class="m-0 shadow">
+					<img alt="ceo" class="w-100" src="assets/about-us/cto.jpg" />
+					<ion-card-header class="ion-text-center">
+						<ion-card-title
+							>Alejandro Mateus
+							<br />
+							CTO
+						</ion-card-title>
+					</ion-card-header>
+				</ion-card>
+			</ion-col>
+			<ion-col size="12" size-sm="3" size-lg="3">
+				<ion-card color="light" class="m-0 shadow">
+					<img alt="ceo" class="w-100" src="assets/about-us/coo.png" />
+					<ion-card-header class="ion-text-center">
+						<ion-card-title
+							>Katherine Gonzales
+							<br />
+							COO
+						</ion-card-title>
+					</ion-card-header>
+				</ion-card>
+			</ion-col>
+			<ion-col size="12" size-sm="1.5" size-lg="1.5"></ion-col>
+		</ion-row>
+	</section>
+	<div class="p-4"></div>
+	<div class="p-4"></div>
 </ion-content>

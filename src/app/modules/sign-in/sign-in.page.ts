@@ -47,6 +47,11 @@ export class SignInPage implements OnInit {
 	}
 
 	signIn(): void {
-		this.commonsService.navigate('user/home');
+		if (
+			this.signInForm.value.email === 'alejandroyepes@kotacademy.com' &&
+			this.signInForm.value.password === 'Alejo.123'
+		) {
+			this.commonsService.navigate('user/home');
+		}
 	}
 }
