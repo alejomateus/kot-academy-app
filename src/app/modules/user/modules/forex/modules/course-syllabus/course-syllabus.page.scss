@@ -1,7 +1,6 @@
 @media (max-width: 576px) {
 	.centrar-vertical {
-		background-image: var(--opacity-white), rgba(255, 255, 255, 0.9)),
-			url(/assets/services/forex.jpeg);
+		background-image: var(--opacity-white), url(/assets/services/forex.jpeg);
 		display: inline-table;
 		padding-top: 4rem;
 		padding-bottom: 7rem;
@@ -9,7 +8,6 @@
 }
 @media (min-width: 576px) {
 	.centrar-vertical {
-		background-image: var(--opacity-white), rgba(255, 255, 255, 0.9)),
-			url(/assets/services/forex.jpeg);
+		background-image: var(--opacity-white), url(/assets/services/forex.jpeg);
 	}
 }

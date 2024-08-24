@@ -10,7 +10,7 @@ export class ScheduleComponent implements OnInit {
 	@Input() schedule: Schedule;
 	max: string[];
 	keys: string[];
-	isEdit: boolean = false;
+	isEdit: boolean = true;
 	constructor() {}
 
 	ngOnInit() {

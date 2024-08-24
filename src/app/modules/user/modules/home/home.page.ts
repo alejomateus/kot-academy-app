@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonsService } from '@shared/services/commons.service';
+import { DashboardOptions } from '../../../../models/dashboard-options';
 
 @Component({
 	selector: 'kot-home',
@@ -7,7 +8,7 @@ import { CommonsService } from '@shared/services/commons.service';
 	styleUrls: ['./home.page.scss']
 })
 export class HomePage implements OnInit {
-	services = [
+	services: DashboardOptions[] = [
 		{
 			image: 'binaries.jpeg',
 			title: 'Binarias',

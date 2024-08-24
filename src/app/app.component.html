@@ -7,7 +7,7 @@
 	[attr.data-bs-theme]="validation ? 'dark' : 'light'"
 >
 	<div class="container-fluid">
-		<a class="navbar-brand">KOT Academy</a>
+		<a class="navbar-brand" (click)="navigate(validation ? 'user' : 'home')">KOT Academy</a>
 		<button
 			class="navbar-toggler"
 			type="button"
@@ -48,24 +48,26 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link">Servicios</a>
+						<a class="nav-link" (click)="navigate('user')">Servicios</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Binaries</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item">Clases en vivo</a></li>
-							<li><a class="dropdown-item">Aprende ahora</a></li>
-							<li><a class="dropdown-item">Ideas de trade</a></li>
-							<li><a class="dropdown-item">Horario</a></li>
+							<li><a class="dropdown-item" (click)="navigate('user/binaries')">Inicio</a></li>
+							<li><a class="dropdown-item" (click)="navigate('user/binaries/live-lesson')">Clases en vivo</a></li>
+							<li><a class="dropdown-item" (click)="navigate('user/binaries/course-syllabus')">Aprende ahora</a></li>
+							<li><a class="dropdown-item" (click)="navigate('user/binaries/trade-ideas')">Ideas de trade</a></li>
+							<li><a class="dropdown-item" (click)="navigate('user/binaries/class-schedule')">Horario</a></li>
 						</ul>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Forex</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item">Clases en vivo</a></li>
-							<li><a class="dropdown-item">Aprende ahora</a></li>
-							<li><a class="dropdown-item">Ideas de trade</a></li>
-							<li><a class="dropdown-item">Horario</a></li>
+							<li><a class="dropdown-item" (click)="navigate('user/forex')">Inicio</a></li>
+							<li><a class="dropdown-item" (click)="navigate('user/forex/live-lesson')">Clases en vivo</a></li>
+							<li><a class="dropdown-item" (click)="navigate('user/forex/course-syllabus')">Aprende ahora</a></li>
+							<li><a class="dropdown-item" (click)="navigate('user/forex/trade-ideas')">Ideas de trade</a></li>
+							<li><a class="dropdown-item" (click)="navigate('user/forex/class-schedule')">Horario</a></li>
 						</ul>
 					</li>
 				</ul>

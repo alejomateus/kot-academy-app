@@ -10,26 +10,30 @@ import { CommonsService } from '@shared/services/commons.service';
 export class CourseSyllabusPage implements OnInit {
 	options: DashboardOptions[] = [
 		{
-			title: 'Basicos de forex',
-			description: 'Basicos de forex',
+			image: 'dashboard/forex/basics.jpeg',
+			title: '',
+			description: '',
 			color: 'secondary',
 			redirect: '1'
 		},
 		{
-			title: 'Analisis de forex',
-			description: 'Analisis de forex',
+			image: 'dashboard/forex/analysis.jpeg',
+			title: '',
+			description: '',
 			color: 'danger',
 			redirect: '2'
 		},
 		{
-			title: 'Ondas de Elliot',
-			description: 'Ondas de Elliot',
+			image: 'dashboard/forex/ondes.jpeg',
+			title: '',
+			description: '',
 			color: 'medium',
 			redirect: '3'
 		},
 		{
-			title: 'Indicadores',
-			description: 'Indicadores',
+			image: 'dashboard/forex/indicators.jpeg',
+			title: '',
+			description: '',
 			color: 'dark',
 			redirect: '4'
 		}

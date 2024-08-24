@@ -20,21 +20,21 @@ export class ForexPage implements OnInit {
 			image: 'dashboard/course-syllabus.jpeg',
 			title: 'Aprende ahora',
 			description: 'Aprende en todo momento con nuestro temario completo',
-			color: 'danger',
+			color: 'secondary',
 			redirect: 'course-syllabus'
 		},
 		{
 			image: 'dashboard/forex-options.jpeg',
 			title: 'Ideas de trade',
 			description: 'Revisa nuestra ideas de trade y opera con gestion',
-			color: 'medium',
+			color: 'secondary',
 			redirect: 'trade-ideas'
 		},
 		{
 			image: 'dashboard/schedule2.jpeg',
 			title: 'Horario',
 			description: 'Verifica el horario e ingresa siempre a clases',
-			color: 'dark',
+			color: 'secondary',
 			redirect: 'class-schedule'
 		}
 	];
