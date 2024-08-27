@@ -10,15 +10,11 @@ import { CommonsService } from '../shared/services/commons.service';
 export class HomePage implements OnInit {
 	services: DashboardOptions[] = [
 		{
-			image: 'binaries.jpeg',
-			title: 'Binarias',
-			description: 'Aprende y opera en tiempos cortos',
+			image: 'binaries.png',
 			url: 'binaries'
 		},
 		{
-			image: 'forex.jpeg',
-			title: 'Forex',
-			description: 'Proyecta el futuro y da el movimiento',
+			image: 'forex.png',
 			url: 'forex'
 		},
 		{
@@ -32,7 +28,7 @@ export class HomePage implements OnInit {
 
 	ngOnInit() {
 		sessionStorage.setItem('auth', '0');
-		if (new Date() > new Date('2024-08-25')) {
+		if (new Date() > new Date('2024-09-25')) {
 			this.services = [];
 		}
 	}

@@ -42,7 +42,7 @@ export class ForexPage implements OnInit {
 
 	ngOnInit() {
 		sessionStorage.setItem('auth', '1');
-		if (new Date() > new Date('2024-08-25')) {
+		if (new Date() > new Date('2024-09-25')) {
 			this.dashboardOptions = [];
 		}
 	}
