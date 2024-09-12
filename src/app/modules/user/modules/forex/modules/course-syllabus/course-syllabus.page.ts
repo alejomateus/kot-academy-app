@@ -10,28 +10,28 @@ import { CommonsService } from '@shared/services/commons.service';
 export class CourseSyllabusPage implements OnInit {
 	options: DashboardOptions[] = [
 		{
-			image: 'dashboard/forex/basics.jpeg',
+			image: 'dashboard/forex/basics.jpg',
 			title: '',
 			description: '',
 			color: 'secondary',
 			redirect: '1'
 		},
 		{
-			image: 'dashboard/forex/analysis.jpeg',
+			image: 'dashboard/forex/analysis.jpg',
 			title: '',
 			description: '',
 			color: 'danger',
 			redirect: '2'
 		},
 		{
-			image: 'dashboard/forex/ondes.jpeg',
+			image: 'dashboard/forex/ondes.jpg',
 			title: '',
 			description: '',
 			color: 'medium',
 			redirect: '3'
 		},
 		{
-			image: 'dashboard/forex/indicators.jpeg',
+			image: 'dashboard/forex/indicators.jpg',
 			title: '',
 			description: '',
 			color: 'dark',

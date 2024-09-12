@@ -10,28 +10,28 @@ import { CommonsService } from '@shared/services/commons.service';
 export class CourseSyllabusPage implements OnInit {
 	options: DashboardOptions[] = [
 		{
-			image: 'dashboard/binaries/basic.jpeg',
+			image: 'dashboard/binaries/basic.jpg',
 			title: '',
 			description: '',
 			color: 'secondary',
 			redirect: '1'
 		},
 		{
-			image: 'dashboard/binaries/concepts.jpeg',
+			image: 'dashboard/binaries/intermedium.jpg',
 			title: '',
 			description: '',
 			color: 'danger',
 			redirect: '2'
 		},
 		{
-			image: 'dashboard/binaries/patron.jpeg',
+			image: 'dashboard/binaries/patron.jpg',
 			title: '',
 			description: '',
 			color: 'medium',
 			redirect: '3'
 		},
 		{
-			image: 'dashboard/binaries/lecture.jpeg',
+			image: 'dashboard/binaries/lecture.jpg',
 			title: '',
 			description: '',
 			color: 'dark',

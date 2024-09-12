@@ -9,6 +9,16 @@ import { CommonsService } from './modules/shared/services/commons.service';
 })
 export class AppComponent implements OnInit {
 	validation: boolean;
+	isNavbarOpen = false; // Controla el estado del menú responsive
+
+	// Función para navegar y cerrar el menú responsive
+
+	// Función para seleccionar un enlace y cerrar el menú
+	selectLink() {
+		console.log('Enlace seleccionado');
+		this.isNavbarOpen = false; // Oculta el menú responsive
+	}
+
 	constructor(
 		private commonsService: CommonsService,
 		private router: Router
@@ -27,5 +37,6 @@ export class AppComponent implements OnInit {
 
 	navigate(route: string): void {
 		this.commonsService.navigate(route);
+		this.selectLink();
 	}
 }

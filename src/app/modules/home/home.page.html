@@ -1,8 +1,8 @@
 <ion-content [fullscreen]="true">
 	<div class="p-4"></div>
-	<section id="start" class="ion-padding-top">
+	<section id="start" class="ion-padding-top section">
 		<ion-row>
-			<ion-col size="12" size-md="6" class="ion-text-justify ion-padding my-auto p-4">
+			<ion-col size="12" size-md="6" class="ion-text-justify ion-padding my-auto p-4 h4">
 				<span>
 					Bienvenidos a KOT Academy, nos especializamos en generar ingresos a través de los mercados financieros. </span
 				><br /><br />
@@ -12,17 +12,53 @@
 				><br /><br />
 				<span> El mejor conocimiento trae mejores resultados </span>
 			</ion-col>
-			<ion-col size="12" size-md="6" class="my-auto ion-padding">
+			<ion-col size="12" size-md="6" class="my-auto ion-padding ion-text-center">
 				<img src="assets/logo_kot.png" alt="" class="ion-padding" />
 			</ion-col>
 		</ion-row>
 	</section>
-	<section id="services" class="ion-padding-top">
+	<section id="start" class="ion-padding-top bg-body-tertiary kot-color--dark">
+		<ion-row>
+			<ion-col size="12" size-md="6" class="ion-text-center ion-padding my-auto h4">
+				<div class="section shadow p-4">
+					<h1 class="fw-bold">1000 Nuevos estudiantes confian en KOT Academy</h1>
+					<br />
+					<h6 class="opacity-75">Lideres en educacion de alta calidad</h6>
+					<br />
+					<button class="btn btn-primary" type="button">Iniciar Ahora</button>
+				</div>
+			</ion-col>
+			<ion-col size="12" size-md="6" class="my-auto ion-padding ion-text-center">
+				<img src="assets/dashboard/live-lessons.jpeg" alt="" />
+			</ion-col>
+		</ion-row>
+	</section>
+	<section>
+		<ion-row>
+			<ion-col size="12" size-md="3" class="my-auto shadow-sm ion-padding ion-text-center">
+				<h2 class="fw-bold kot-color--primary">20</h2>
+				Paises
+			</ion-col>
+			<ion-col size="12" size-md="3" class="my-auto shadow-sm ion-padding ion-text-center">
+				<h2 class="fw-bold kot-color--primary">90%</h2>
+				Efectividad
+			</ion-col>
+			<ion-col size="12" size-md="3" class="my-auto shadow-sm ion-padding ion-text-center">
+				<h2 class="fw-bold kot-color--primary">24 /7</h2>
+				Acceso
+			</ion-col>
+			<ion-col size="12" size-md="3" class="my-auto shadow-sm ion-padding ion-text-center">
+				<h2 class="fw-bold kot-color--primary">+4</h2>
+				Academias
+			</ion-col>
+		</ion-row>
+	</section>
+	<section id="services" class="bg-body-tertiary kot-color--dark ion-padding-bottom">
 		<div class="row">
 			<div class="col"></div>
 			<div class="col-12 col-sm-10 col-md-10 col-lg-8 col-xl-8 p-0">
-				<div class="p-2">
-					<h1 class="text-center fw-bold">Servicios</h1>
+				<div class="p-3">
+					<h1 class="text-center fw-bold m-0">¿Que aprenderas?</h1>
 				</div>
 				<ngb-carousel [interval]="5000" [showNavigationIndicators]="false">
 					<ng-template ngbSlide *ngFor="let service of services" class="carousel-transformation">
@@ -42,7 +78,7 @@
 			<div class="col"></div>
 		</div>
 	</section>
-	<section id="about-us" class="ion-text-center ion-padding-top">
+	<section id="about-us" class="ion-text-center ion-padding-top section">
 		<h2 class="d-sm-block">Conoce de quien aprenderás</h2>
 		<div class="row">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 py-2 image">
@@ -66,23 +102,23 @@
 			</div>
 		</div>
 	</section>
-	<section class="ion-padding-bottom" id="team">
-		<div class="p-2">
-			<h1 class="text-center fw-bold">Nuestro equipo</h1>
+	<section class="ion-padding-bottom section bg-body-tertiary kot-color--dark" id="team">
+		<div class="pt-3">
+			<h1 class="text-center fw-bold kot-color--dark m-0">Nuestro equipo</h1>
 		</div>
 		<ion-row>
-			<ion-col size="12" size-sm="1.5" size-lg="1.5"></ion-col>
+			<ion-col size="12" size-sm="1.5" size-lg="1.5" class="ion-no-padding"></ion-col>
 			<ion-col size="12" size-sm="3" size-lg="3">
 				<ion-row>
 					<ion-col size="1"></ion-col>
 					<ion-col size="10" size-md="12">
-						<ion-card color="light" class="m-0 shadow">
+						<ion-card color="dark" class="m-0 shadow">
 							<img alt="ceo" class="w-100" src="assets/about-us/instructor.png" />
 							<ion-card-header class="ion-text-center">
 								<ion-card-title
 									>Alejandro Yepes
 									<br />
-									CEO
+									<span class="fw-bold">CEO </span>
 								</ion-card-title>
 							</ion-card-header>
 						</ion-card>
@@ -94,13 +130,13 @@
 				<ion-row>
 					<ion-col size="1"></ion-col>
 					<ion-col size="10" size-md="12">
-						<ion-card color="light" class="m-0 shadow">
-							<img alt="ceo" class="w-100" src="assets/about-us/cto.jpg" />
+						<ion-card color="dark" class="m-0 shadow">
+							<img alt="cto" class="w-100" src="assets/about-us/cto.jpg" />
 							<ion-card-header class="ion-text-center">
 								<ion-card-title
 									>Alejandro Mateus
 									<br />
-									CTO
+									<span class="fw-bold">CTO </span>
 								</ion-card-title>
 							</ion-card-header>
 						</ion-card>
@@ -112,13 +148,13 @@
 				<ion-row>
 					<ion-col size="1"></ion-col>
 					<ion-col size="10" size-md="12">
-						<ion-card color="light" class="m-0 shadow">
-							<img alt="ceo" class="w-100" src="assets/about-us/coo.png" />
+						<ion-card color="dark" class="m-0 shadow">
+							<img alt="coo" class="w-100" src="assets/about-us/coo.png" />
 							<ion-card-header class="ion-text-center">
 								<ion-card-title
 									>Katherine Gonzales
 									<br />
-									COO
+									<span class="fw-bold">COO </span>
 								</ion-card-title>
 							</ion-card-header>
 						</ion-card>
@@ -126,9 +162,9 @@
 					<ion-col size="1"></ion-col>
 				</ion-row>
 			</ion-col>
-			<ion-col size="12" size-sm="1.5" size-lg="1.5"></ion-col>
+			<ion-col size="12" size-sm="1.5" size-lg="1.5" class="ion-no-padding"></ion-col>
 		</ion-row>
 	</section>
-	<div class="p-4"></div>
+	<div class="p-4 bg-dark"></div>
 	<div class="p-4"></div>
 </ion-content>
