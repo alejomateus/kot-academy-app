@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
 		private commonsService: CommonsService,
 		private router: Router
 	) {}
+
 	ngOnInit(): void {
 		this.registerRouteChanges();
 	}

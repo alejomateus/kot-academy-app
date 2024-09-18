@@ -25,12 +25,12 @@ ngb-carousel {
 	}
 }
 @media (max-width: 576px) {
-	.centrar-vertical {
+	.vertical-center {
 		background-image: var(--opacity-white), url(/assets/fondo4.jpeg);
 	}
 }
 @media (min-width: 576px) {
-	.centrar-vertical {
+	.vertical-center {
 		background-image: var(--opacity-white), url(/assets/fondo3.jpeg);
 	}
 }

@@ -37,8 +37,9 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
 @import 'intl-tel-input/build/css/intlTelInput.css';
+@import '~aos/dist/aos.css';
 
-.centrar-vertical {
+.vertical-center {
 	display: flex;
 	justify-content: center; /* Centra horizontalmente */
 	align-items: center; /* Centra verticalmente */
@@ -46,13 +47,13 @@
 }
 
 @media (max-width: 576px) {
-	.centrar-vertical {
+	.vertical-center {
 		background-image: var(--opacity-black), url(/assets/fondo.jpeg);
 		background-repeat: round;
 	}
 }
 @media (min-width: 576px) {
-	.centrar-vertical {
+	.vertical-center {
 		background-image: var(--opacity-black), url(/assets/fondo2.jpeg);
 		background-repeat: round;
 	}
@@ -64,4 +65,50 @@ body {
 ion-content {
 	height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
 	margin: 0; /* Elimina el margen por defecto del body */
+}
+
+.animation {
+	opacity: 0;
+	transform: translateX(100%);
+	transition:
+		opacity 3s ease,
+		transform 3s ease;
+}
+
+.animation.visible {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.animation[data-effect='fade-in'] {
+	opacity: 0;
+}
+
+.animation[data-effect='fade-in'].visible {
+	opacity: 1;
+}
+
+.animation[data-effect='zoom-in'] {
+	transform: scale(0);
+}
+
+.animation[data-effect='zoom-in'].visible {
+	transform: scale(1);
+}
+.animation[data-effect='fade-out'] {
+	opacity: 0;
+	transition: opacity 3s ease;
+}
+
+.animation[data-effect='fade-out'].visible {
+	opacity: 1;
+}
+.animation[data-effect='fade-slide-up'] {
+	transform: translateY(20px);
+	opacity: 0;
+}
+
+.animation[data-effect='fade-slide-up'].visible {
+	transform: translateY(0);
+	opacity: 1;
 }

@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content>
 	<div class="p-4"></div>
 	<section id="start" class="ion-padding-top section">
 		<ion-row>
@@ -17,9 +17,16 @@
 			</ion-col>
 		</ion-row>
 	</section>
-	<section id="start" class="ion-padding-top bg-body-tertiary kot-color--dark">
+
+	<section id="students" class="ion-padding-top bg-body-tertiary kot-color--dark">
 		<ion-row>
-			<ion-col size="12" size-md="6" class="ion-text-center ion-padding my-auto h4">
+			<ion-col
+				size="12"
+				size-md="6"
+				class="ion-text-center ion-padding my-auto h4 animation"
+				kotAnimateOnScroll
+				data-effect="zoom-in"
+			>
 				<div class="section shadow p-4">
 					<h1 class="fw-bold">1000 Nuevos estudiantes confian en KOT Academy</h1>
 					<br />
@@ -29,31 +36,17 @@
 				</div>
 			</ion-col>
 			<ion-col size="12" size-md="6" class="my-auto ion-padding ion-text-center">
-				<img src="assets/dashboard/live-lessons.jpeg" alt="" />
+				<img
+					src="assets/dashboard/live-lessons.jpeg"
+					alt=""
+					class="animation"
+					kotAnimateOnScroll
+					data-effect="fade-in"
+				/>
 			</ion-col>
 		</ion-row>
 	</section>
-	<section>
-		<ion-row>
-			<ion-col size="12" size-md="3" class="my-auto shadow-sm ion-padding ion-text-center">
-				<h2 class="fw-bold kot-color--primary">20</h2>
-				Paises
-			</ion-col>
-			<ion-col size="12" size-md="3" class="my-auto shadow-sm ion-padding ion-text-center">
-				<h2 class="fw-bold kot-color--primary">90%</h2>
-				Efectividad
-			</ion-col>
-			<ion-col size="12" size-md="3" class="my-auto shadow-sm ion-padding ion-text-center">
-				<h2 class="fw-bold kot-color--primary">24 /7</h2>
-				Acceso
-			</ion-col>
-			<ion-col size="12" size-md="3" class="my-auto shadow-sm ion-padding ion-text-center">
-				<h2 class="fw-bold kot-color--primary">+4</h2>
-				Academias
-			</ion-col>
-		</ion-row>
-	</section>
-	<section id="services" class="bg-body-tertiary kot-color--dark ion-padding-bottom">
+	<section id="services" class="section ion-padding-bottom">
 		<div class="row">
 			<div class="col"></div>
 			<div class="col-12 col-sm-10 col-md-10 col-lg-8 col-xl-8 p-0">
@@ -78,9 +71,57 @@
 			<div class="col"></div>
 		</div>
 	</section>
+	<section id="coverage" class="ion-text-center bg-body-tertiary kot-color--dark">
+		<ion-row>
+			<ion-col size="12" size-md="3" class="shadow-sm ion-padding ion-text-center">
+				<h2 class="fw-bold kot-color--primary">20</h2>
+				Paises
+			</ion-col>
+			<ion-col size="12" size-md="3" class="shadow-sm ion-padding ion-text-center">
+				<h2 class="fw-bold kot-color--primary">90%</h2>
+				Efectividad
+			</ion-col>
+			<ion-col size="12" size-md="3" class="shadow-sm ion-padding ion-text-center">
+				<h2 class="fw-bold kot-color--primary">24 /7</h2>
+				Acceso
+			</ion-col>
+			<ion-col size="12" size-md="3" class="shadow-sm ion-padding ion-text-center">
+				<h2 class="fw-bold kot-color--primary">+4</h2>
+				Academias
+			</ion-col>
+		</ion-row>
+	</section>
+	<section id="operational" class="ion-padding-top section">
+		<ion-row>
+			<ion-col
+				size="12"
+				size-md="6"
+				class="ion-text-justify ion-padding my-auto p-4 h4 animation"
+				kotAnimateOnScroll
+				data-effect="zoom-in"
+			>
+				<h1 class="fw-bold">Gestión Operativa</h1>
+				<br />
+				<h4 class="opacity-75">
+					Analisis diario en multiples ocasiones que determinan las operativas que saldran positivas en periodos cortos
+					y en futuros cercanos
+				</h4>
+				<br />
+			</ion-col>
+			<ion-col size="12" size-md="6" class="my-auto ion-padding ion-text-center">
+				<img
+					src="assets/operational_management.png"
+					alt=""
+					class="ion-padding animation"
+					kotAnimateOnScroll
+					data-effect="fade-in"
+				/>
+			</ion-col>
+		</ion-row>
+	</section>
 	<section id="about-us" class="ion-text-center ion-padding-top section">
 		<h2 class="d-sm-block">Conoce de quien aprenderás</h2>
-		<div class="row">
+		<div class="row animation" kotAnimateOnScroll data-effect="zoom-in">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 py-2 image">
 				<img alt="asd" src="assets/about-us/instructor.png" class="w-100 shadow-dark instructor" />
 				<h5>Alejandro Yepes</h5>
@@ -106,9 +147,9 @@
 		<div class="pt-3">
 			<h1 class="text-center fw-bold kot-color--dark m-0">Nuestro equipo</h1>
 		</div>
-		<ion-row>
+		<ion-row class="animation" kotAnimateOnScroll data-effect="fade-slide-up">
 			<ion-col size="12" size-sm="1.5" size-lg="1.5" class="ion-no-padding"></ion-col>
-			<ion-col size="12" size-sm="3" size-lg="3">
+			<ion-col size="12" size-sm="3" size-lg="3" class="animation" kotAnimateOnScroll data-effect="fade-slide-up">
 				<ion-row>
 					<ion-col size="1"></ion-col>
 					<ion-col size="10" size-md="12">
@@ -126,7 +167,7 @@
 					<ion-col size="1"></ion-col>
 				</ion-row>
 			</ion-col>
-			<ion-col size="12" size-sm="3" size-lg="3">
+			<ion-col size="12" size-sm="3" size-lg="3" class="animation" kotAnimateOnScroll data-effect="fade-slide-up">
 				<ion-row>
 					<ion-col size="1"></ion-col>
 					<ion-col size="10" size-md="12">
@@ -144,7 +185,7 @@
 					<ion-col size="1"></ion-col>
 				</ion-row>
 			</ion-col>
-			<ion-col size="12" size-sm="3" size-lg="3">
+			<ion-col size="12" size-sm="3" size-lg="3" class="animation" kotAnimateOnScroll data-effect="fade-slide-up">
 				<ion-row>
 					<ion-col size="1"></ion-col>
 					<ion-col size="10" size-md="12">
@@ -165,6 +206,7 @@
 			<ion-col size="12" size-sm="1.5" size-lg="1.5" class="ion-no-padding"></ion-col>
 		</ion-row>
 	</section>
+
 	<div class="p-4 bg-dark"></div>
 	<div class="p-4"></div>
 </ion-content>
