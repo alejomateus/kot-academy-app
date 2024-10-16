@@ -30,6 +30,8 @@
 			"@shared/*": ["app/modules/shared/*"],
 			"@theme/*": ["app/modules/theme/*"],
       "@user/*": ["app/modules/user/*"],
+      "@home/*": ["app/modules/home/*"],
+      "@admin/*": ["app/modules/admin/*"],
       "@models/*": ["app/models/*"]
 		}
 	},

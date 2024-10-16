@@ -23,23 +23,53 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link" href="#services">Academias</a>
+						<a
+							class="nav-link"
+							(click)="navigate('home', 'services')"
+							data-bs-toggle="collapse"
+							data-bs-target="#navbarSupportedContent"
+							>Academias</a
+						>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#about-us">Experiencia</a>
+						<a
+							class="nav-link"
+							(click)="navigate('home', 'about-us')"
+							data-bs-toggle="collapse"
+							data-bs-target="#navbarSupportedContent"
+							>Experiencia</a
+						>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#team">Quienes somos</a>
+						<a
+							class="nav-link"
+							(click)="navigate('home', 'team')"
+							data-bs-toggle="collapse"
+							data-bs-target="#navbarSupportedContent"
+							>Quienes somos</a
+						>
 					</li>
 				</ul>
 				<div class="navbar-text p-0">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="nav-link fw-bold" (click)="navigate('sign-in')">Iniciar sesión</a>
+							<a
+								class="nav-link fw-bold"
+								(click)="navigate('sign-in')"
+								data-bs-toggle="collapse"
+								data-bs-target="#navbarSupportedContent"
+								>Iniciar sesión</a
+							>
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link fw-bold" (click)="navigate('sign-up')">Registro</a>
+							<a
+								class="nav-link fw-bold"
+								(click)="navigate('sign-up')"
+								data-bs-toggle="collapse"
+								data-bs-target="#navbarSupportedContent"
+								>Registro</a
+							>
 						</li>
 					</ul>
 				</div>

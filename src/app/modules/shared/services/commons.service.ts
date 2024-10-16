@@ -12,11 +12,16 @@ export class CommonsService {
 	 * Navigate to internal
 	 * @param url
 	 */
-	async navigate(url: string, params?: any): Promise<void> {
-		await this.router.navigate(['/' + url], {
-			state: params ?? {}
-		});
+	async navigate(url: string, params?: any, fragment?: string): Promise<void> {
+		if (fragment) {
+			this.router.navigateByUrl('/home#' + fragment);
+		} else {
+			await this.router.navigate(['/' + url], {
+				state: params ?? {}
+			});
+		}
 	}
+
 	async showLoading(message: string, duration: number): Promise<void> {
 		const loading = await this.loadingCtrl.create({
 			message,
@@ -24,6 +29,7 @@ export class CommonsService {
 		});
 		loading.present();
 	}
+
 	getAuthenticationValidation(): string {
 		return sessionStorage.getItem('auth');
 	}

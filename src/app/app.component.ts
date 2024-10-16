@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { CommonsService } from './modules/shared/services/commons.service';
 
 @Component({
@@ -21,10 +21,27 @@ export class AppComponent implements OnInit {
 
 	constructor(
 		private commonsService: CommonsService,
-		private router: Router
+		private router: Router,
+		private route: ActivatedRoute
 	) {}
 
-	ngOnInit(): void {
+	ngOnInit() {
+		this.route.fragment.subscribe((fragment) => {
+			if (fragment) {
+				const element = document.getElementById(fragment);
+				console.log(element);
+
+				if (element) {
+					setTimeout(() => {
+						const element = document.getElementById(fragment);
+						if (element) {
+							element.scrollIntoView({ behavior: 'smooth' });
+						}
+					}, 250); // Ajusta el tiempo según sea necesario
+				}
+			}
+		});
+
 		this.registerRouteChanges();
 	}
 	registerRouteChanges(): void {
@@ -36,8 +53,8 @@ export class AppComponent implements OnInit {
 		});
 	}
 
-	navigate(route: string): void {
-		this.commonsService.navigate(route);
+	navigate(route: string, fragment?: string): void {
+		this.commonsService.navigate(route, null, fragment);
 		this.selectLink();
 	}
 }
