@@ -1,13 +1,13 @@
 <nav
 	class="navbar navbar-expand-lg fixed-top"
 	[ngClass]="{
-		'bg-dark': validation,
-		'bg-body-tertiary': !validation
+		'bg-dark': authData,
+		'bg-body-tertiary': !authData
 	}"
-	[attr.data-bs-theme]="validation ? 'dark' : 'light'"
+	[attr.data-bs-theme]="authData ? 'dark' : 'light'"
 >
 	<div class="container-fluid">
-		<a class="navbar-brand" (click)="navigate(validation ? 'user' : 'home')">KOT Academy</a>
+		<a class="navbar-brand" (click)="navigate(authData ? 'user' : 'home')">KOT Academy</a>
 		<button
 			class="navbar-toggler"
 			type="button"
@@ -19,7 +19,7 @@
 		>
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		@if (!validation) {
+		@if (!authData) {
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
@@ -116,7 +116,7 @@
 <ion-app>
 	<ion-router-outlet></ion-router-outlet>
 </ion-app>
-@if (!validation) {
+@if (!authData) {
 	<a
 		class="whatsapp-link"
 		href="https://api.whatsapp.com/send?phone=3194186947&text=Hola, quiero mas información"
@@ -129,10 +129,10 @@
 <footer
 	class="fixed-bottom p-1"
 	[ngClass]="{
-		'bg-dark': validation,
-		'bg-body-tertiary': !validation
+		'bg-dark': authData,
+		'bg-body-tertiary': !authData
 	}"
-	[attr.data-bs-theme]="validation ? 'dark' : 'light'"
+	[attr.data-bs-theme]="authData ? 'dark' : 'light'"
 >
 	<div class="container">
 		<ion-row>
@@ -146,8 +146,8 @@
 							><ion-icon
 								name="logo-facebook"
 								[ngClass]="{
-									'kot-color--dark': !validation,
-									'kot-color--white': validation
+									'kot-color--dark': !authData,
+									'kot-color--white': authData
 								}"
 							></ion-icon
 						></a>
@@ -157,8 +157,8 @@
 							><ion-icon
 								name="logo-instagram"
 								[ngClass]="{
-									'kot-color--dark': !validation,
-									'kot-color--white': validation
+									'kot-color--dark': !authData,
+									'kot-color--white': authData
 								}"
 							></ion-icon
 						></a>
@@ -168,8 +168,8 @@
 							><ion-icon
 								name="logo-tiktok"
 								[ngClass]="{
-									'kot-color--dark': !validation,
-									'kot-color--white': validation
+									'kot-color--dark': !authData,
+									'kot-color--white': authData
 								}"
 							></ion-icon
 						></a>

@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { CommonsService } from './modules/shared/services/commons.service';
+import { IAuthResponse } from '@shared/models/authentication.interface';
+import { AuthenticationService } from '@shared/services/authentication.service';
+import { CommonsService } from '@shared/services/commons.service';
+import { StorageService } from '@shared/services/storage.service';
 
 @Component({
 	selector: 'kot-root',
@@ -8,19 +11,15 @@ import { CommonsService } from './modules/shared/services/commons.service';
 	styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
-	validation: boolean;
-	isNavbarOpen = false; // Controla el estado del menú responsive
-
-	// Función para navegar y cerrar el menú responsive
-
-	// Función para seleccionar un enlace y cerrar el menú
+	authData: IAuthResponse;
 	selectLink() {
 		console.log('Enlace seleccionado');
-		this.isNavbarOpen = false; // Oculta el menú responsive
 	}
 
 	constructor(
 		private commonsService: CommonsService,
+		private storageService: StorageService,
+		private authenticationService: AuthenticationService,
 		private router: Router,
 		private route: ActivatedRoute
 	) {}
@@ -28,27 +27,21 @@ export class AppComponent implements OnInit {
 	ngOnInit() {
 		this.route.fragment.subscribe((fragment) => {
 			if (fragment) {
-				const element = document.getElementById(fragment);
-				console.log(element);
-
-				if (element) {
-					setTimeout(() => {
-						const element = document.getElementById(fragment);
-						if (element) {
-							element.scrollIntoView({ behavior: 'smooth' });
-						}
-					}, 250); // Ajusta el tiempo según sea necesario
-				}
+				setTimeout(() => {
+					const element = document.getElementById(fragment);
+					if (document.getElementById(fragment)) {
+						element.scrollIntoView({ behavior: 'smooth' });
+					}
+				}, 250);
 			}
 		});
 
 		this.registerRouteChanges();
 	}
 	registerRouteChanges(): void {
-		this.router.events.subscribe((event) => {
+		this.router.events.subscribe(async (event: any): Promise<any> => {
 			if (event instanceof NavigationEnd) {
-				this.validation = this.commonsService.getAuthenticationValidation() === '1';
-				console.log(this.validation);
+				this.authData = JSON.parse(await this.storageService.getItem('auth-data'));
 			}
 		});
 	}
@@ -56,5 +49,20 @@ export class AppComponent implements OnInit {
 	navigate(route: string, fragment?: string): void {
 		this.commonsService.navigate(route, null, fragment);
 		this.selectLink();
+	}
+
+	@HostListener('window:keydown')
+	@HostListener('click', ['$event.target'])
+	async checkRefreshToken() {
+		const user = await this.authenticationService.getCurrentAuthenticatedUser();
+		if (user) {
+			const time = await this.authenticationService.calculateTimeExpiration();
+			if (time < 500000 && time > 100) {
+				await this.authenticationService.refreshToken();
+			}
+			if (time <= 100) {
+				this.router.navigate(['/signout']);
+			}
+		}
 	}
 }

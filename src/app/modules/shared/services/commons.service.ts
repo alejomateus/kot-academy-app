@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoadingController } from '@ionic/angular';
+import { AlertController, LoadingController } from '@ionic/angular';
 
 @Injectable()
 export class CommonsService {
+	loading: any;
+	alert: any;
 	constructor(
 		private loadingCtrl: LoadingController,
+		private alertController: AlertController,
 		private router: Router
 	) {}
 	/**
@@ -22,12 +25,27 @@ export class CommonsService {
 		}
 	}
 
-	async showLoading(message: string, duration: number): Promise<void> {
-		const loading = await this.loadingCtrl.create({
-			message,
-			duration
+	async showLoading(message: string): Promise<void> {
+		this.loading = await this.loadingCtrl.create({
+			message
 		});
-		loading.present();
+		this.loading.present();
+	}
+
+	dismissAlert(): void {
+		this.alert.dismiss();
+	}
+
+	async showAlert(message: string): Promise<void> {
+		this.alert = await this.alertController.create({
+			message
+		});
+		this.alert.present();
+	}
+	dismissLoading(): void {
+		console.log(this.loading);
+
+		this.loading.dismiss();
 	}
 
 	getAuthenticationValidation(): string {

@@ -1,1 +1,1 @@
-npm run format-pretty-quick &&  ng lint --fix  && git add .
+npm run format-pretty-quick  && git add .

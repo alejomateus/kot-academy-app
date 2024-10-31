@@ -27,12 +27,16 @@
 			"@app/*": ["app/*"],
 			"@sign-in/*": ["app/modules/sign-in/*"],
 			"@sign-up/*": ["app/modules/sign-up/*"],
+      "@core/*": ["app/modules/core/*"],
 			"@shared/*": ["app/modules/shared/*"],
 			"@theme/*": ["app/modules/theme/*"],
       "@user/*": ["app/modules/user/*"],
       "@home/*": ["app/modules/home/*"],
       "@admin/*": ["app/modules/admin/*"],
-      "@models/*": ["app/models/*"]
+      "@models/*": ["app/models/*"],
+      "@environment": [
+        "environments/environment.ts"
+      ],
 		}
 	},
 	"angularCompilerOptions": {

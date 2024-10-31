@@ -28,7 +28,7 @@ export class HomePage implements OnInit {
 
 	ngOnInit() {
 		sessionStorage.setItem('auth', '0');
-		if (new Date() > new Date('2024-09-25')) {
+		if (new Date() > new Date('2025-09-25')) {
 			this.services = [];
 		}
 	}

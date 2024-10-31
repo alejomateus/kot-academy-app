@@ -41,7 +41,7 @@ export class CourseSyllabusPage implements OnInit {
 	constructor(private commonsService: CommonsService) {}
 
 	ngOnInit() {
-		if (new Date() > new Date('2024-09-25')) {
+		if (new Date() > new Date('2025-09-25')) {
 			this.options = [];
 		}
 	}

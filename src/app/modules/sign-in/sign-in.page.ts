@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthenticationService } from '@shared/services/authentication.service';
 import { CommonsService } from '@shared/services/commons.service';
 import { SignInValidationMessages } from './models/sign-in';
 @Component({
@@ -10,7 +11,10 @@ import { SignInValidationMessages } from './models/sign-in';
 export class SignInPage implements OnInit {
 	signInForm: FormGroup;
 	signInValidationMessages: SignInValidationMessages;
-	constructor(private commonsService: CommonsService) {}
+	constructor(
+		private commonsService: CommonsService,
+		private authenticationService: AuthenticationService
+	) {}
 
 	ngOnInit(): void {
 		this.initForm();
@@ -46,12 +50,21 @@ export class SignInPage implements OnInit {
 		this.commonsService.navigate('sign-up');
 	}
 
-	signIn(): void {
-		if (
-			this.signInForm.value.email === 'alejandroyepes@kotacademy.com' &&
-			this.signInForm.value.password === 'Alejo.123'
-		) {
+	async signIn(): Promise<void> {
+		try {
+			this.commonsService.showLoading('Validando tus credenciales');
+			await this.authenticationService.signIn(this.signInForm.value);
+			this.commonsService.dismissLoading();
+
 			this.commonsService.navigate('user/home');
+		} catch (error) {
+			console.log(error);
+
+			this.commonsService.showAlert('Credenciales incorrectas');
+		} finally {
+			setTimeout(() => {
+				this.commonsService.dismissLoading();
+			}, 100);
 		}
 	}
 }
