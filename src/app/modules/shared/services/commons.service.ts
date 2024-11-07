@@ -17,7 +17,7 @@ export class CommonsService {
 	 */
 	async navigate(url: string, params?: any, fragment?: string): Promise<void> {
 		if (fragment) {
-			this.router.navigateByUrl('/home#' + fragment);
+			await this.router.navigateByUrl('/home#' + fragment);
 		} else {
 			await this.router.navigate(['/' + url], {
 				state: params ?? {}
@@ -38,7 +38,8 @@ export class CommonsService {
 
 	async showAlert(message: string): Promise<void> {
 		this.alert = await this.alertController.create({
-			message
+			message,
+			buttons: ['Aceptar']
 		});
 		this.alert.present();
 	}

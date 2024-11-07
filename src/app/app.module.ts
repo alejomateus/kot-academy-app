@@ -9,10 +9,7 @@ import { SharedModule } from '@shared/shared.module';
 import { ThemeModule } from '@theme/theme.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-// export function HttpLoaderFactory(http: HttpClient) {
-//   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
-// }
+import { ValidateActiveSessionService } from './guards/validate-active-session.service';
 
 export function tokenGetter() {
 	return null;
@@ -32,7 +29,11 @@ export function tokenGetter() {
 			}
 		})
 	],
-	providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideHttpClient()],
+	providers: [
+		{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+		provideHttpClient(),
+		ValidateActiveSessionService
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

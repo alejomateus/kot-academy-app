@@ -17,9 +17,16 @@
 									class="form-control"
 									id="name"
 									formControlName="name"
-									[class.error]="signUpForm.controls['name'].invalid && (signUpForm.controls['name'].dirty || signUpForm.controls['name'].touched)"
+									[class.is-invalid]="signUpForm.controls['name'].invalid && (signUpForm.controls['name'].dirty || signUpForm.controls['name'].touched)"
 								/>
-								<div id="emailError" class="form-text"></div>
+								<div
+									*ngIf="signUpForm.controls['name'].invalid && (signUpForm.controls['name'].dirty || signUpForm.controls['name'].touched)"
+									class="invalid-feedback"
+								>
+									<ng-container *ngFor="let validation of signUpValidationMessages.name">
+										<div *ngIf="signUpForm.controls['name'].hasError(validation.type)">{{ validation.message }}</div>
+									</ng-container>
+								</div>
 							</div>
 							<div class="ion-padding-bottom">
 								<label for="phone" class="form-label">Telefono</label>
@@ -40,20 +47,29 @@
 									[numberFormat]="PhoneNumberFormat.National"
 									name="phone"
 									formControlName="phone"
+									[class.is-invalid]="signUpForm.controls['phone'].invalid && (signUpForm.controls['phone'].touched )"
 								>
 								</ngx-intl-tel-input>
-								<div class="error-formulario">
-									<!-- <ng-container *ngFor="let validation of signInValidationMessages.email">
-                      <span class="error-message"
-                          *ngIf="formCotizar.controls.origen.hasError(validation.type) && (formCotizar.controls.origen.dirty || formCotizar.controls.origen.touched)">
-                          {{ validation.message }}
-                      </span>
-                  </ng-container> -->
+
+								<div
+									*ngIf="signUpForm.controls['phone'].invalid && (signUpForm.controls['phone'].touched)"
+									class="invalid-feedback"
+								>
+									<ng-container *ngFor="let validation of signUpValidationMessages.phone">
+										<div *ngIf="signUpForm.controls['phone'].hasError(validation.type)">{{ validation.message }}</div>
+									</ng-container>
 								</div>
 							</div>
 
 							<div class="d-grid gap-2">
-								<button class="btn btn-success" type="button" [disabled]="signUpForm.invalid">Continuar</button>
+								<button
+									class="btn btn-success"
+									type="button"
+									[disabled]="signUpForm.invalid"
+									(click)="createProspect()"
+								>
+									Continuar
+								</button>
 							</div>
 							<div class="ion-text-center ion-padding">
 								<a class="btn btn-link text-decoration-underline fw-bold" (click)="signInNavigation()"

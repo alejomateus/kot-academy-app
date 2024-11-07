@@ -21,11 +21,7 @@ a {
 .title {
 	color: #014583;
 }
-.form-control {
-	&.error {
-		border-color: var(--color-error);
-	}
-}
+
 @media (max-width: 576px) {
 	.vertical-center {
 		display: inline-table;

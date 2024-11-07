@@ -7,7 +7,7 @@
 					<img src="assets/logo_kot.png" alt="" class="ion-padding" />
 					<div class="login-container">
 						<p class="fs-3 fw-bold title ion-padding">Bienvenido a KOT Academy</p>
-						<form class="ion-text-left ion-padding" novalidate [formGroup]="signInForm">
+						<form class="ion-text-left ion-padding needs-validation" novalidate [formGroup]="signInForm">
 							<div class="ion-padding-bottom">
 								<label for="email" class="form-label">Correo electronico</label>
 								<input
@@ -15,8 +15,17 @@
 									class="form-control"
 									id="email"
 									formControlName="email"
-									[class.error]="signInForm.controls['email'].invalid && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched)"
+									[class.is-invalid]="signInForm.controls['email'].invalid && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched)"
 								/>
+								<div
+									*ngIf="signInForm.controls['email'].invalid && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched)"
+									class="invalid-feedback"
+								>
+									<ng-container *ngFor="let validation of signInValidationMessages.email">
+										<div *ngIf="signInForm.controls['email'].hasError(validation.type)">{{ validation.message }}</div>
+									</ng-container>
+								</div>
+
 								<div id="emailError" class="form-text"></div>
 							</div>
 							<div class="ion-padding-bottom">
@@ -26,15 +35,17 @@
 									class="form-control"
 									id="password"
 									formControlName="password"
-									[class.error]="signInForm.controls['password'].invalid && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched)"
+									[class.is-invalid]="signInForm.controls['password'].invalid && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched)"
 								/>
-								<div class="error-formulario">
-									<!-- <ng-container *ngFor="let validation of signInValidationMessages.email">
-                      <span class="error-message"
-                          *ngIf="formCotizar.controls.origen.hasError(validation.type) && (formCotizar.controls.origen.dirty || formCotizar.controls.origen.touched)">
-                          {{ validation.message }}
-                      </span>
-                  </ng-container> -->
+								<div
+									*ngIf="signInForm.controls['password'].invalid && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched)"
+									class="invalid-feedback"
+								>
+									<ng-container *ngFor="let validation of signInValidationMessages.password">
+										<div *ngIf="signInForm.controls['password'].hasError(validation.type)">
+											{{ validation.message }}
+										</div>
+									</ng-container>
 								</div>
 							</div>
 							<div class="ion-text-end ion-padding-bottom">

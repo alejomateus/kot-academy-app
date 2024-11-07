@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '@shared/services/authentication.service';
 import { CommonsService } from '@shared/services/commons.service';
+import { IAuthResponse } from '../shared/models/authentication.interface';
 import { SignInValidationMessages } from './models/sign-in';
 @Component({
 	selector: 'kot-sign-in',
@@ -18,17 +19,16 @@ export class SignInPage implements OnInit {
 
 	ngOnInit(): void {
 		this.initForm();
-		sessionStorage.setItem('auth', '0');
 	}
 
 	initForm(): void {
 		this.signInValidationMessages = {
 			email: [
-				{ type: 'required', message: '"Este campo es requerido' },
+				{ type: 'required', message: 'Este campo es requerido' },
 				{ type: 'pattern', message: 'No es un correo valido, debe tener @ y dominio' }
 			],
 			password: [
-				{ type: 'required', message: '"Este campo es requerido' },
+				{ type: 'required', message: 'Este campo es requerido' },
 				{ type: 'pattern', message: 'La contraseña no es valida' }
 			]
 		};
@@ -46,20 +46,17 @@ export class SignInPage implements OnInit {
 		});
 	}
 
-	signUpNavigation(): void {
-		this.commonsService.navigate('sign-up');
+	async signUpNavigation(): Promise<void> {
+		await this.commonsService.navigate('sign-up');
 	}
 
 	async signIn(): Promise<void> {
 		try {
 			this.commonsService.showLoading('Validando tus credenciales');
-			await this.authenticationService.signIn(this.signInForm.value);
+			const authData: IAuthResponse = await this.authenticationService.signIn(this.signInForm.value);
 			this.commonsService.dismissLoading();
-
-			this.commonsService.navigate('user/home');
+			this.commonsService.navigate(authData.user.role !== 'admin' ? 'admin' : 'user');
 		} catch (error) {
-			console.log(error);
-
 			this.commonsService.showAlert('Credenciales incorrectas');
 		} finally {
 			setTimeout(() => {

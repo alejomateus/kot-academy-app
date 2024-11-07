@@ -38,13 +38,19 @@ export class AuthenticationService {
 		return JSON.parse(await this.storageService.getItem('auth-data'));
 	}
 
-	async signOut(): Promise<any> {
+	async signOut(): Promise<void> {
 		await this.storageService.removeAll();
+		await this.commonsService.navigate('home');
 	}
 
 	async calculateTimeExpiration(): Promise<number> {
 		const exp = this.jwtHelperService.decodeToken((await this.getCurrentAuthenticatedUser()).token).exp * 1000;
 		return exp + this.getDifferenceSecond() - new Date().getTime();
+	}
+
+	public tokenExpired(token: string): boolean {
+		const expiry = this.jwtHelperService.decodeToken(token).exp * 1000 + this.getDifferenceSecond();
+		return new Date().getTime() >= expiry;
 	}
 
 	private calcDifferenceTime(iat: number): void {

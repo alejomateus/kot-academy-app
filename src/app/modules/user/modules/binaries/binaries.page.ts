@@ -41,7 +41,6 @@ export class BinariesPage implements OnInit {
 	constructor(private commonsService: CommonsService) {}
 
 	ngOnInit() {
-		sessionStorage.setItem('auth', '1');
 		if (new Date() > new Date('2025-09-25')) {
 			this.dashboardOptions = [];
 		}

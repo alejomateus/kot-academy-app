@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
 		private route: ActivatedRoute
 	) {}
 
-	ngOnInit() {
+	ngOnInit(): void {
 		this.route.fragment.subscribe((fragment) => {
 			if (fragment) {
 				setTimeout(() => {
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
 		this.registerRouteChanges();
 	}
 	registerRouteChanges(): void {
-		this.router.events.subscribe(async (event: any): Promise<any> => {
+		this.router.events.subscribe(async (event: any): Promise<void> => {
 			if (event instanceof NavigationEnd) {
 				this.authData = JSON.parse(await this.storageService.getItem('auth-data'));
 			}
@@ -51,9 +51,13 @@ export class AppComponent implements OnInit {
 		this.selectLink();
 	}
 
+	async signOut(): Promise<void> {
+		await this.authenticationService.signOut();
+	}
+
 	@HostListener('window:keydown')
 	@HostListener('click', ['$event.target'])
-	async checkRefreshToken() {
+	async checkRefreshToken(): Promise<void> {
 		const user = await this.authenticationService.getCurrentAuthenticatedUser();
 		if (user) {
 			const time = await this.authenticationService.calculateTimeExpiration();
@@ -61,7 +65,7 @@ export class AppComponent implements OnInit {
 				await this.authenticationService.refreshToken();
 			}
 			if (time <= 100) {
-				this.router.navigate(['/signout']);
+				await this.authenticationService.signOut();
 			}
 		}
 	}
