@@ -44,8 +44,6 @@ export class CommonsService {
 		this.alert.present();
 	}
 	dismissLoading(): void {
-		console.log(this.loading);
-
 		this.loading.dismiss();
 	}
 

@@ -18,13 +18,96 @@
 
 	<ion-grid>
 		<ion-row>
+			<ion-col size="12" class="ion-text-center">
+				<h1>Usuarios</h1>
+			</ion-col>
+		</ion-row>
+		<ion-row>
 			<ion-col class="ion-no-padding"></ion-col>
 			<ion-col size="12" size-sm="11" size-md="11" size-lg="10">
-				<h1 class="fs-4 m-0 fw-bold title ion-padding">Horario de Clases</h1>
-				*<img
-					src="https://storage.googleapis.com/kot-academy.appspot.com/9363dc7c-f74f-4aea-a33c-bc009c2f97f8lecture.jpeg"
-					alt="User Image"
-				/>
+				<ion-row>
+					@for (option of dashboardOptions; track $index) {
+					<ion-col size="12" size-sm="6" size-md="6" size-lg="6" class="p-2 pb-2">
+						<ion-card [color]="option.color" class="m-0 ion-padding">
+							@if (option.image) {
+							<img [alt]="option.title" [src]="'assets/' + option.image" />
+							} @if (option.title) {
+							<ion-card-header class="ion-text-start p-2">
+								<ion-card-title class="fw-bold"> <h2 class="m-0">{{ option.title }}</h2></ion-card-title>
+							</ion-card-header>
+							} @if (option.description) {
+							<ion-card-content class="ion-text-start ps-2"
+								><h2 class="m-0">{{ option.description }}</h2>
+							</ion-card-content>
+							}
+						</ion-card>
+					</ion-col>
+					}
+				</ion-row>
+				<ion-row class="pt-4">
+					<ion-col size="12">
+						<div class="table-responsive-md d-none d-sm-block">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th></th>
+										<th>User</th>
+										<th>Role</th>
+										<th>Plan</th>
+										<th>Billing</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>
+											<img src="https://dummyimage.com/50x50/000/fff" alt="Profile Picture" />
+											Zsazsa McCleverty<br />zmcclevertyeoundcloud.com
+										</td>
+										<td><i class="fas fa-user-cog"></i> Maintainer</td>
+										<td>Enterprise</td>
+										<td>Auto Debit</td>
+										<td>Active</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>
+											<img src="https://dummyimage.com/50x50/000/fff" alt="Profile Picture" />
+											Vladamir Koschek<br />vkoschek17bc.net.au
+										</td>
+										<td><i class="fas fa-pen"></i> Author</td>
+										<td>Team</td>
+										<td>Manual-Paypal</td>
+										<td>Active</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>
+											<img src="https://dummyimage.com/50x50/000/fff" alt="Profile Picture" />
+											Travus Bruntjen<br />tbruntjeniitemeter.com
+										</td>
+										<td><i class="fas fa-user-shield"></i> Admin</td>
+										<td>Enterprise</td>
+										<td>Manual-Cash</td>
+										<td>Active</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>
+											<img src="https://dummyimage.com/50x50/000/fff" alt="Profile Picture" />
+											Silvain Halstead<br />shalstead5hinystat.com
+										</td>
+										<td><i class="fas fa-user-cog"></i> Maintainer</td>
+										<td>Basic</td>
+										<td>Auto Debit</td>
+										<td>Inactive</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</ion-col>
+				</ion-row>
 			</ion-col>
 			<ion-col></ion-col>
 		</ion-row>

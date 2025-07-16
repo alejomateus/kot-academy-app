@@ -18,7 +18,7 @@ export class ValidateActiveSessionService {
 		if (userData) {
 			token = userData.token;
 		}
-		if (checkAdmin && userData.user.role === 'admin') {
+		if (checkAdmin && userData.user.role !== 'admin') {
 			await this.commonsService.navigate('user');
 		}
 

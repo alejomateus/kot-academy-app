@@ -55,7 +55,7 @@ export class SignInPage implements OnInit {
 			this.commonsService.showLoading('Validando tus credenciales');
 			const authData: IAuthResponse = await this.authenticationService.signIn(this.signInForm.value);
 			this.commonsService.dismissLoading();
-			this.commonsService.navigate(authData.user.role !== 'admin' ? 'admin' : 'user');
+			this.commonsService.navigate(authData.user.role !== 'admin' ? 'user' : 'admin');
 		} catch (error) {
 			this.commonsService.showAlert('Credenciales incorrectas');
 		} finally {

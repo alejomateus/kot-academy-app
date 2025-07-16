@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { IAuthResponse } from '@shared/models/authentication.interface';
@@ -12,22 +13,21 @@ import { StorageService } from '@shared/services/storage.service';
 })
 export class AppComponent implements OnInit {
 	authData: IAuthResponse;
-	selectLink() {
-		console.log('Enlace seleccionado');
-	}
+	currentUrl: string;
 
 	constructor(
 		private commonsService: CommonsService,
 		private storageService: StorageService,
 		private authenticationService: AuthenticationService,
 		private router: Router,
-		private route: ActivatedRoute
+		private route: ActivatedRoute,
+		private location: Location
 	) {}
 
 	ngOnInit(): void {
-		this.route.fragment.subscribe((fragment) => {
+		this.route.fragment.subscribe((fragment: string) => {
 			if (fragment) {
-				setTimeout(() => {
+				setTimeout((): void => {
 					const element = document.getElementById(fragment);
 					if (document.getElementById(fragment)) {
 						element.scrollIntoView({ behavior: 'smooth' });
@@ -41,14 +41,18 @@ export class AppComponent implements OnInit {
 	registerRouteChanges(): void {
 		this.router.events.subscribe(async (event: any): Promise<void> => {
 			if (event instanceof NavigationEnd) {
+				this.obtenerPrimerSegmento();
 				this.authData = JSON.parse(await this.storageService.getItem('auth-data'));
 			}
 		});
 	}
 
+	obtenerPrimerSegmento(): void {
+		this.currentUrl = this.location.path().split('/')[1];
+	}
+
 	navigate(route: string, fragment?: string): void {
 		this.commonsService.navigate(route, null, fragment);
-		this.selectLink();
 	}
 
 	async signOut(): Promise<void> {
